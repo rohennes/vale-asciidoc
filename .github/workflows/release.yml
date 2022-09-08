@@ -1,0 +1,30 @@
+---
+#
+# Copyright (c) 2021 Red Hat, Inc.
+# This program and the accompanying materials are made
+# available under the terms of the Eclipse Public License 2.0
+# which is available at https://www.eclipse.org/legal/epl-2.0/
+#
+# SPDX-License-Identifier: EPL-2.0
+#
+name: Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Create release
+        run: |
+          cd styles
+          echo $GITHUB_RUN_NUMBER > version.txt
+          zip -r ocp.zip ocp
+          gh release create v$GITHUB_RUN_NUMBER 'ocp.zip'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
