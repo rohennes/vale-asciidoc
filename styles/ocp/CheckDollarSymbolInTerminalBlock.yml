@@ -1,0 +1,8 @@
+---
+extends: existence
+scope: raw
+ignorecase: true
+level: error
+message: "Does the terminal code block contain a $ at the beginning of the line?"
+raw:
+  - '.*(?<!\.Example output|Sample output\n)\[source,terminal\]\n----\n(?!\$)'
