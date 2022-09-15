@@ -1,0 +1,8 @@
+---
+extends: existence
+scope: raw
+ignorecase: true
+level: suggestion
+message: "Does your xref contain an anchor ID?"
+raw:
+  - 'xref(.*)(\.adoc)(?!\#)'

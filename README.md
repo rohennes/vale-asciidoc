@@ -16,3 +16,5 @@ https://github.com/rohennes/ocp-rules/releases/download/v1/ocp.zip
 BasedOnStyles = RedHat, ocp
 ````
 
+PR contributions welcome to this repo. The current list of potential rules is in the gdoc here: https://docs.google.com/document/d/1xawRkloLUDj0cz3hlbMxTYIFBK31jMbF6X54U3MPGGY/edit?usp=sharing Feel free to add any rules ideas to this gdoc also. 
+
