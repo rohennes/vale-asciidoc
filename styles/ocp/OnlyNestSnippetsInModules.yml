@@ -3,6 +3,6 @@ extends: existence
 scope: raw
 ignorecase: true
 level: error
-message: "You can only use nest snippets in modules."
+message: "You can only nest snippets in modules."
 raw:
   - 'include::(?!snippets).*\[.*\]'
