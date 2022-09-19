@@ -5,4 +5,4 @@ ignorecase: true
 level: error
 message: "You can only nest snippets in modules."
 raw:
-  - 'include::(?!snippets).*\[.*\]'
+  - 'include::(?!snippets|https:\/\/raw\.githubusercontent\.com).*(\[.*\])?'
