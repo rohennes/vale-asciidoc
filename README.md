@@ -13,7 +13,7 @@ Packages = RedHat, \
 https://github.com/rohennes/ocp-rules/releases/latest/download/OpenShiftAsciiDocValidation.zip
 
 [*]
-BasedOnStyles = RedHat, ocp
+BasedOnStyles = RedHat, OpenShiftAsciiDocValidation
 ````
 
 PR contributions welcome to this repo. 
