@@ -10,7 +10,7 @@ StylesPath = styles
 MinAlertLevel = suggestion
 
 Packages = RedHat, \
-https://github.com/rohennes/ocp-rules/releases/download/latest/OpenShiftAsciiDocValidation.zip
+https://github.com/rohennes/ocp-rules/releases/latest/download/OpenShiftAsciiDocValidation.zip
 
 [*]
 BasedOnStyles = RedHat, ocp
