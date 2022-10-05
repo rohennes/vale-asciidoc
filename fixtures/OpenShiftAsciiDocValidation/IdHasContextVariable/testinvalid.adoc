@@ -1,0 +1,5 @@
+
+[id="cli-basic-commands_"]
+
+// Do we have multiple IDs in the same module?
+[id="another-id-in-the-same-module-also-gets-flagged"]

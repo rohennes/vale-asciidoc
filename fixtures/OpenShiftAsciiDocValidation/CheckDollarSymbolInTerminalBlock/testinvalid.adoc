@@ -1,0 +1,10 @@
+[source,bash]
+----
+ oc get my lunch
+----
+
+[source,terminal]
+----
+oc get my lunch
+----
+

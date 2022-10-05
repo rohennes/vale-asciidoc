@@ -6,4 +6,4 @@ level: error
 link: https://redhat-documentation.github.io/supplementary-style-guide/#commands-with-root-privileges
 message: "Does the terminal code block contain a $ at the beginning of the line?"
 raw:
-  - '.*(?<!\.Example output\n|Sample output\n)\[source,terminal\]\n----\n(?!\$|#)'
+  - '.*(?<!\.Example output\n|Sample output\n)\[source,(terminal|bash)\]\n----\n(?!\$|#)'
