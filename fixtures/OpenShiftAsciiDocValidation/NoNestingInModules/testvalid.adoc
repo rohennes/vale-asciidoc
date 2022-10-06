@@ -1,0 +1,3 @@
+include::snippets/technology-preview.adoc[leveloffset=+0]
+
+include::https://raw.githubusercontent.com/openshift/managed-cluster-validating-webhooks/master/docs/webhooks.json[]
