@@ -29,3 +29,11 @@ Computer says no
 ----
 Computer says no
 ----
+
+.Example
+[source,terminal]
+----
+spec:
+  settings:
+    ProcTurboMode: Disabled<1>
+----
