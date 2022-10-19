@@ -11,7 +11,7 @@ To test this rule set locally, add a vale config file in your modules directory.
 
 1. Add the following to a .gitignore file in your home directory:
 
-`modules/.valie.ini `
+`modules/.vale.ini `
 
 If you didn't have a .gitignore file previously in your home dir, you may need to make git aware of this global .gitignore file by running the following:
 
