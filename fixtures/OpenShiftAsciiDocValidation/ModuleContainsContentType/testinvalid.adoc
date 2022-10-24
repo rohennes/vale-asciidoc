@@ -1,9 +1,0 @@
-// Error only flagged from cmd line. If the content-type has the wrong test, or is missing entirely, the rule is triggered.
-:_content-type: TROUBLESHOOTING
-[id="cli-basic-commands_{context}"]
-= Basic CLI commands
-
-// :_content-type: WRONG_TEXT
-// [id="cli-basic-commands_{context}"]
-
-// [id="cli-basic-commands_{context}"]

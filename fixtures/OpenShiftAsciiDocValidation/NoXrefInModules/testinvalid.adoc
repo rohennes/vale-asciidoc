@@ -1,1 +1,0 @@
-xref:../rosa_getting_started/rosa-getting-started.adoc#rosa-getting-started[Getting started with {product-title}]

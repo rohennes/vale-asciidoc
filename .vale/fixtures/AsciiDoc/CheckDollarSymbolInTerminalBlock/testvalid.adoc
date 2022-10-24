@@ -1,0 +1,39 @@
+[source,bash]
+----
+$ oc get my lunch
+----
+
+[source,yaml]
+----
+oc get my lunch
+----
+
+[source,terminal]
+----
+$ oc get my lunch
+----
+
+[source,terminal]
+----
+# oc get my lunch
+----
+
+.Example output
+[source,terminal]
+----
+Computer says no
+----
+
+.Sample output
+[source,bash]
+----
+Computer says no
+----
+
+.Example
+[source,terminal]
+----
+spec:
+  settings:
+    ProcTurboMode: Disabled<1>
+----
