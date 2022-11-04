@@ -2,7 +2,7 @@
 
 This repo contains Vale rules for checking Asciidoc markup specific to [OpenShift Docs Guidelines](https://github.com/openshift/openshift-docs/blob/main/contributing_to_docs/doc_guidelines.adoc) and the [Modular Docs Guidelines](https://redhat-documentation.github.io/modular-docs/).
 
-PR contributions welcome to this repo. Or please raise GitHub issues if you find problems.
+PR contributions are welcome to this repo. Or please raise GitHub issues if you find problems.
 
 If you have any ideas for additional rules, please add these here: https://docs.google.com/document/d/1xawRkloLUDj0cz3hlbMxTYIFBK31jMbF6X54U3MPGGY/edit?usp=sharing  
 
