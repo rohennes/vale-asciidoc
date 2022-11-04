@@ -33,6 +33,6 @@ BasedOnStyles = RedHat, OpenShiftAsciiDocValidation
 
 3. Run `vale sync` in the modules directory.
 
-You should see two packages installed. To verify, run `vale ls-config`  in the modules directory and you should see two packages "RedHat" and "OpenShiftAsciiDocValidation". 
+You should see two packages installed. To verify, run `vale ls-config` in the modules directory and you should see two packages "RedHat" and "OpenShiftAsciiDocValidation". 
 
 
