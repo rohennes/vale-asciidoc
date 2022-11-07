@@ -6,4 +6,4 @@ level: suggestion
 link: https://docs.engineering.redhat.com/pages/viewpage.action?spaceKey=JUP&title=Jupiter+Source+files+readiness+Checklist#JupiterSourcefilesreadinessChecklist-Additionalresourcesspecificrequirements
 message: "Do your additional resources heading feature a role ID above the header: [role=\"_additional-resources\"]"
 raw:
-  - '(?<!\[role="_additional-resources"\]\n)\.Additional resources'
+  - '(?<!\[role="_additional-resources"\]\n)^\.Additional resources'
