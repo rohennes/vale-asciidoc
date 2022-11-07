@@ -25,7 +25,7 @@ StylesPath = ../.vale/styles
 MinAlertLevel = suggestion
 
 Packages = RedHat, \
-https://github.com/rohennes/ocp-rules/releases/latest/download/OpenShiftAsciiDocValidation.zip
+https://github.com/rohennes/ocp-rules/releases/latest/download/AsciiDoc.zip
 
 [[!.]*.adoc]
 BasedOnStyles = RedHat, AsciiDoc
