@@ -15,19 +15,21 @@ Rule() {
     echo $DIR
     VALIDALERTSCOUNT="$(vale --config="$DIR/.vale.ini" --no-exit --output=line "$DIR/testvalid.adoc" | wc -l)"
     INVALIDALERTS="$(vale --config="$DIR/.vale.ini" --no-exit --output=line "$DIR/testinvalid.adoc" | wc -l)"
-    #echo "Vale ALERTS: $INVALIDALERTS"
+    # echo "Vale ALERTS: $INVALIDALERTS"
     INVALIDLINES="$(grep -c "//vale-fixture" "$DIR/testinvalid.adoc" || true)"
-    #echo "INVALID LINES: $INVALIDLINES"
+    # echo "INVALID LINES: $INVALIDLINES"
     INVALIDGAP=$(($INVALIDLINES - $INVALIDALERTS))
     if [ "$VALIDALERTSCOUNT" -gt 0 ]
     then
-    #    echo "INVALID LINES: $INVALIDLINES"
-    #    echo "Vale ALERTS: $INVALIDALERTS"
+        echo "INVALID LINES: $INVALIDLINES"
+        echo "Vale ALERTS: $INVALIDALERTS"
         echo "ERROR: $VALIDALERTSCOUNT in .vale/fixtures/AsciiDoc/$RULE/testvalid.adoc for .vale/styles/AsciiDoc/$RULE.yml"
         TOTAL=$(( TOTAL + VALIDALERTSCOUNT ))
     fi
     if [ $INVALIDGAP -gt 0 ]
     then
+        echo "INVALID LINES: $INVALIDLINES"
+        echo "Vale ALERTS: $INVALIDALERTS"
         echo "ERROR: $INVALIDGAP in .vale/fixtures/AsciiDoc/$RULE/testinvalid.adoc / .vale/styles/AsciiDoc/$RULE.yml"
         TOTAL=$(( TOTAL + INVALIDGAP ))
     fi
