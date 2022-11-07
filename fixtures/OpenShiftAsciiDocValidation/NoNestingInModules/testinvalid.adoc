@@ -1,4 +1,0 @@
-include::modules/rosa-getting-started-deleting-a-cluster.adoc[leveloffset=+1]
-
-include::rosa-getting-started-deleting-a-cluster.adoc[leveloffset=+1]
-

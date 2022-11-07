@@ -1,0 +1,6 @@
+//vale-fixture
+[id="cli-basic-commands_"]
+
+//vale-fixture
+// Do we have multiple IDs in the same module?
+[id="another-id-in-the-same-module-also-gets-flagged"]

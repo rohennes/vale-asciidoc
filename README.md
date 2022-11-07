@@ -1,17 +1,17 @@
-# OpenShift Vale rules for Asciidoc markup
+# Vale ruleset for Asciidoc
 
-This repo contains Vale rules for checking Asciidoc markup specific to [OpenShift Docs Guidelines](https://github.com/openshift/openshift-docs/blob/main/contributing_to_docs/doc_guidelines.adoc) and the [Modular Docs Guidelines](https://redhat-documentation.github.io/modular-docs/).
+This repo contains Vale rules for checking Asciidoc markup specific to [Modular Docs Guidelines](https://redhat-documentation.github.io/modular-docs/) and [OpenShift Docs Guidelines](https://github.com/openshift/openshift-docs/blob/main/contributing_to_docs/doc_guidelines.adoc).
 
 PR contributions are welcome to this repo. Or please raise GitHub issues if you find problems.
 
 If you have any ideas for additional rules, please add these here: https://docs.google.com/document/d/1xawRkloLUDj0cz3hlbMxTYIFBK31jMbF6X54U3MPGGY/edit?usp=sharing  
 
-## Testing the `OpenShiftAsciiDocValidation` rule set
+## Testing the `AsciiDoc` rule set
 To test this rule set locally, add a vale config file in your modules directory. This won't effect other rule sets you have already. You can also add this new vale config file to a glboal gitignore file in your home directory to avoid any conflicts.
 
 1. Add the following to a .gitignore file in your home directory:
 
-`modules/.valie.ini `
+`modules/.vale.ini `
 
 If you didn't have a .gitignore file previously in your home dir, you may need to make git aware of this global .gitignore file by running the following:
 
@@ -28,11 +28,11 @@ Packages = RedHat, \
 https://github.com/rohennes/ocp-rules/releases/latest/download/OpenShiftAsciiDocValidation.zip
 
 [[!.]*.adoc]
-BasedOnStyles = RedHat, OpenShiftAsciiDocValidation
+BasedOnStyles = RedHat, AsciiDoc
 ```
 
 3. Run `vale sync` in the modules directory.
 
-You should see two packages installed. To verify, run `vale ls-config` in the modules directory and you should see two packages "RedHat" and "OpenShiftAsciiDocValidation". 
+You should see two packages installed. To verify, run `vale ls-config`  in the modules directory and you should see two packages "RedHat" and "AsciiDoc". 
 
 
