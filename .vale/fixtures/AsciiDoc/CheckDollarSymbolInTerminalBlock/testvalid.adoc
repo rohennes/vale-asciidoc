@@ -49,3 +49,12 @@ C:\> net user <username>
 ----
 sh-4.2# chroot /host
 ----
+
+[source,terminal]
+----
+.
+├── CODEOWNERS
+├── README.md
+└── scripts
+    └── validate-vale-rules.sh
+----
