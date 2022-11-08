@@ -37,3 +37,15 @@ spec:
   settings:
     ProcTurboMode: Disabled<1>
 ----
+
+[source,terminal]
+----
+C:\> net user <username> 
+----
+
+. Change your root directory to the host:
++
+[source,terminal]
+----
+sh-4.2# chroot /host
+----

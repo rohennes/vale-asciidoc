@@ -6,4 +6,4 @@ level: error
 link: https://redhat-documentation.github.io/supplementary-style-guide/#commands-with-root-privileges
 message: "Does the terminal code block contain a $ or # at the beginning of the line? For example output, prepend the code block for the output with the title '.Example output'."
 raw:
-  - '.*(?<!\.Example.*\n|Sample.*\n)\[source,(terminal|bash)\]\n----\n(?!\$|#)'
+  - '.*(?<!\.Example.*\n|Sample.*\n)\[source,(terminal|bash)\]\n----\n(?!\$|#|[A-Z]:\\>|sh)'
