@@ -31,7 +31,7 @@ https://github.com/rohennes/vale-asciidoc/releases/latest/download/AsciiDoc.zip
 BasedOnStyles = RedHat, AsciiDoc
 ```
 
-**Note:** This is a seperate `vale.ini` file that is designed for modules only - not assemblies.  If you are using this with the `openshift-docs` or other repo, Don't overwrite any `vale.ini` that exists in the root of your project directory.
+**Note:** This is a seperate `vale.ini` file that is designed for modules only - not assemblies.  If you are using this with `openshift-docs` or any other repo, don't overwrite any existing `vale.ini` files in the root of your project directory.
 
 2a. Optional. Append `modules/.vale.ini` to your global `~/.gitignore`.
 
