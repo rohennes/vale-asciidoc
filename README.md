@@ -11,11 +11,11 @@ To test this rule set locally, add a vale config file in your modules directory.
 
 1. Add the following to a .gitignore file in your home directory:
 
-`modules/.vale.ini `
+  `modules/.vale.ini `
 
-If you didn't have a .gitignore file previously in your home dir, you may need to make git aware of this global .gitignore file by running the following:
+  If you didn't have a .gitignore file previously in your home dir, you may need to make git aware of this global .gitignore file by running the following:
 
-`git config --global core.excludesFile '~/.gitignore'`
+  `git config --global core.excludesFile '~/.gitignore'`
 
 2. Create a .vale.ini file in your **/modules** directory and add the following:
 
@@ -37,6 +37,6 @@ If you didn't have a .gitignore file previously in your home dir, you may need t
 
 4. Run `vale sync` in the modules directory.
 
-You should see two packages installed. To verify, run `vale ls-config`  in the modules directory and you should see two packages "RedHat" and "AsciiDoc". 
+  You should see two packages installed. To verify, run `vale ls-config`  in the modules directory and you should see two packages "RedHat" and "AsciiDoc". 
 
 
