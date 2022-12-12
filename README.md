@@ -17,7 +17,7 @@ If you didn't have a .gitignore file previously in your home dir, you may need t
 
 `git config --global core.excludesFile '~/.gitignore'`
 
-2. Create a .vale.ini file in your openshift-docs/modules directory and add the following:
+2. Create a .vale.ini file in your **/modules** directory and add the following:
 
 ```
 StylesPath = ../.vale/styles
@@ -30,6 +30,10 @@ https://github.com/rohennes/vale-asciidoc/releases/latest/download/AsciiDoc.zip
 [[!.]*.adoc]
 BasedOnStyles = RedHat, AsciiDoc
 ```
+
+**Note:** This is a seperate `vale.ini` file that is designed for modules only - not assemblies.  If you are using this with the `openshift-docs` or other repo, Don't overwrite any `vale.ini` that exists in the root of your project directory.
+
+2a. Optional. Append `modules/.vale.ini` to your global `~/.gitignore`.
 
 3. Run `vale sync` in the modules directory.
 
