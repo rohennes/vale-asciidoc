@@ -19,19 +19,19 @@ If you didn't have a .gitignore file previously in your home dir, you may need t
 
 2. Create a .vale.ini file in your **/modules** directory and add the following:
 
-```
-StylesPath = ../.vale/styles
+  ```
+  StylesPath = ../.vale/styles
 
-MinAlertLevel = suggestion
+  MinAlertLevel = suggestion
 
-Packages = RedHat, \
-https://github.com/rohennes/vale-asciidoc/releases/latest/download/AsciiDoc.zip
+  Packages = RedHat, \
+  https://github.com/rohennes/vale-asciidoc/releases/latest/download/AsciiDoc.zip
 
-[[!.]*.adoc]
-BasedOnStyles = RedHat, AsciiDoc
-```
+  [[!.]*.adoc]
+  BasedOnStyles = RedHat, AsciiDoc
+  ```
 
-**Note:** This is a separate `vale.ini` file that is designed for modules only - not assemblies.  If you are using this with `openshift-docs` or any other repo, don't overwrite existing `vale.ini` files.
+  **Note:** This is a separate `vale.ini` file that is designed for modules only - not assemblies.  If you are using this with `openshift-docs` or any other repo, don't overwrite existing `vale.ini` files.
 
 3. Optional: Append `modules/.vale.ini` to your global `~/.gitignore`.
 
