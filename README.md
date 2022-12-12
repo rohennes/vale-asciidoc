@@ -33,9 +33,7 @@ To test this rule set locally, add a vale config file in your modules directory.
 
   **Note:** This is a separate `vale.ini` file that is designed for modules only - not assemblies.  If you are using this with `openshift-docs` or any other repo, don't overwrite existing `vale.ini` files.
 
-3. Optional: Append `modules/.vale.ini` to your global `~/.gitignore`.
-
-4. Run `vale sync` in the modules directory.
+3. Run `vale sync` in the modules directory.
 
   You should see two packages installed. To verify, run `vale ls-config`  in the modules directory and you should see two packages "RedHat" and "AsciiDoc". 
 
