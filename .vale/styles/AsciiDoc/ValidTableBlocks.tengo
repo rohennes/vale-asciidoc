@@ -19,21 +19,17 @@ counter := 0
 for line in text.split(scope, "\n") {
   if text.re_match(tbl_delimiter_regex, line) {
     counter ++
-    start := text.index(scope, line)
-    matches = append(matches, {begin: start, end: start + len(line)})
-    fmt.println("Delimiter matches: ",len(matches))
-    fmt.println(line)
+    
   } }
 fmt.println(counter)
 fmt.println(counter % 2)
 if counter % 2 == 1{
   fmt.println("We got an odd number of delimiters here")
+  matches = append(matches, {begin: 0, end: len(scope)})
+  fmt.println(matches)
 } else{
   fmt.println("Delimiters lookin good")
+  fmt.println(matches)
 }
 
-if len(matches) == 0 {
-  fmt.println(matches)
-} else {
-  fmt.println(matches) 
-}
+

@@ -2,7 +2,7 @@
 extends: script
 ignorecase: true
 level: error
-message: "Check that table has a closing table code block TEST."
+message: "There are an odd number of table delimiter blocks in the module, check you have opening and closing delimiters (|===) for each table."
 link: https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/
 scope: raw
 script: |
@@ -15,22 +15,9 @@ script: |
   for line in text.split(scope, "\n") {
     if text.re_match(tbl_delimiter_regex, line) {
       counter ++
-      start := text.index(scope, line)
-      matches = append(matches, {begin: start, end: start + len(line)})
-      fmt.println("Delimiter matches: ",len(matches))
-      fmt.println(line)
-    }
-  }
-  fmt.println(counter)
-  fmt.println(counter % 2)
+      }
+      }
+  
   if counter % 2 == 1{
-    fmt.println("We got an odd number of delimiters here")
-    } else{
-      fmt.println("Delimiters lookin good")
-      }
-
-  if len(matches) == 0 {
-    fmt.println(matches)
-    } else{
-      fmt.println(matches)
-      }
+    matches = append(matches, {begin: 0, end: len(scope)})
+    } 
