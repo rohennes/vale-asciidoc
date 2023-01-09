@@ -1,0 +1,47 @@
+/*
+    Tengo Language
+    $ tengo ValidTableBlocks.tengo <asciidoc_file_to_validate>
+*/
+
+fmt := import("fmt")
+os := import("os")
+text := import("text")
+
+input := os.args()
+//vale gets the file as scope when it runs
+scope := os.read_file(input[2])
+matches := []
+
+tbl_start_regex := "\\[*\\]"
+tbl_start_tags := "\\|={3,4}"
+//tbl_end_regex := "\\|={3,4}"
+//counter := 0
+
+
+//conditional to determine if iterator should look at line
+should_print := false
+
+for line in text.split(scope, "\n") {
+  if should_print{
+    fmt.println("The line following square brackets is: ",line)
+    
+    //Set should_print to false until other if statement finds "[*]"
+    should_print = false
+    
+    //Check if line follow square brackets has table tags
+    if text.re_match(tbl_start_tags, line){
+      fmt.println("Line contains table tags")
+      //Then use logic from Aidan's script?
+    }
+
+  }
+  //Check if line has square brackets that may indicate a table
+  if text.re_match(tbl_start_regex, line) {
+    fmt.println(line)
+    //Change should print to true so first if statement runs to check next line
+    should_print = true
+  }
+}
+
+
+
