@@ -1,15 +1,12 @@
 //vale-fixture
 .Table one
-[Attributes]
+[cols=3*,stripes=even]
 |===
 |Header column 1 |Header column 2 |Header column 3
-
 |Cell 1, row 1
 |Cell 2, row 1
 |Cell 3, row 1
-|===
 
-//vale-fixture
 .Table two
 [options="header"]
 |====
@@ -17,10 +14,14 @@
 |content|content
 |====
 
-//vale-fixture
 .Table three
 [options="header"]
 |====
 |Column Title|Column Title|Column Title
 |content|content|content
+
+.Table four
+[options="header"]
 |====
+|Column Title|Column Title|Column Title
+|content|content|content
