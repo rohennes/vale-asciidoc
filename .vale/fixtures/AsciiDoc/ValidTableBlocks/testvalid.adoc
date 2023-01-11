@@ -9,22 +9,42 @@
 |Cell 3, row 1
 |===
 
+Some text.
+
+//vale-fixture
 .Table two
 [options="header"]
 |====
 |Column Title|Column Title
 |content|content
+This content goes on and on.
 |====
 
+Some text.
 
+//vale-fixture
+[caption="test"]
 .Table three
+|=======
+|A |B |C
+|a |b |c
+|1 |2 |3
+|=======
+
+Some text.
+
+//vale-fixture
+.Table four
 [options="header"]
 |====
 |Column Title|Column Title|Column Title
 |content|content|content
 |====
 
-.Table four
+Some text.
+
+//vale-fixture
+.Table five
 [cols=2*, width="40%", options="header"]
 |====
 |Firefox
