@@ -7,21 +7,31 @@
 |Cell 2, row 1
 |Cell 3, row 1
 
+Some text.
+
+//vale-fixture
 .Table two
 [options="header"]
-|====
+
 |Column Title|Column Title
 |content|content
 |====
+Some text.
 
+//vale-fixture
 .Table three
 [options="header"]
 |====
 |Column Title|Column Title|Column Title
 |content|content|content
 
+Some text.
+
+//vale-fixture
 .Table four
 [options="header"]
 |====
 |Column Title|Column Title|Column Title
 |content|content|content
+
+Some text.

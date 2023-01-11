@@ -1,0 +1,38 @@
+/*
+    Tengo Language
+    $ tengo ValidTableBlocks.tengo <asciidoc_file_to_validate>
+*/
+
+fmt := import("fmt")
+os := import("os")
+text := import("text")
+
+input := os.args()
+scope := os.read_file(input[2])
+
+matches := []
+tbl_delim_regex := "\\|={3,}"
+body_regex := "^[^\\.\\|\\[].*$"
+open_tbl := false
+
+for line in text.split(scope, "\n") {
+  if text.re_match(tbl_delim_regex, line) && open_tbl == false {
+    //start of table
+    open_tbl = true    
+    start := text.index(scope, line)
+    matches = append(matches, {begin: start, end: start + len(line)})
+  } else if text.re_match(tbl_delim_regex, line) && open_tbl == true {
+    //end of table
+    open_tbl = false
+    if len(matches) > 0 {
+      //remove the most recently added match
+      matches = matches[:len(matches)-1]
+    }
+  } else if text.re_match(body_regex, line) {
+    //end of table
+    open_tbl = false
+  }
+}
+
+fmt.println(matches)  
+
