@@ -1,23 +1,22 @@
-//This will only throw an error if there are an odd number of table delimiters. If two tables are missing 1 delimiter tag, then the tables will be bad but this script counts and even number and so won't throw an error. 
-
 //vale-fixture
 .Table one
-[Attributes]
+[cols=3*,stripes=even]
 |===
 |Header column 1 |Header column 2 |Header column 3
 |Cell 1, row 1
 |Cell 2, row 1
 |Cell 3, row 1
 
+Some text.
 
 //vale-fixture
 .Table two
-[options="header"]test
-test
-|====
+[options="header"]
+
 |Column Title|Column Title
 |content|content
 |====
+Some text.
 
 //vale-fixture
 .Table three
@@ -25,7 +24,14 @@ test
 |====
 |Column Title|Column Title|Column Title
 |content|content|content
+
+Some text.
+
+//vale-fixture
+.Table four
+[options="header"]
 |====
+|Column Title|Column Title|Column Title
+|content|content|content
 
-
-
+Some text.
