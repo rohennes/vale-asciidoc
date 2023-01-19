@@ -1,0 +1,31 @@
+/*
+    Tengo Language
+    $ tengo ValidTableBlocks.tengo <asciidoc_file_to_validate>
+*/
+
+fmt := import("fmt")
+os := import("os")
+text := import("text")
+
+input := os.args()
+scope := os.read_file(input[2])
+
+matches := []
+tbl_attrs_regex := "\\[(caption|cols|options).*\\]"
+tbl_delim_regex := "\\|={3,}"
+table_blocks := 0
+
+for line in text.split(scope, "\n") {
+  if text.re_match(tbl_delim_regex, line){
+    start := text.index(scope, line)
+    matches = append(matches, {begin: start, end: start + len(line)})  
+  } else if text.re_match(tbl_attrs_regex, line){
+    table_blocks ++
+  }
+}
+
+if len(matches) / 2 == table_blocks {
+  matches = []
+}
+
+fmt.println(matches)
