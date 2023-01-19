@@ -1,0 +1,27 @@
+---
+extends: script
+ignorecase: true
+level: error
+message: "One or more AsciiDoc table blocks is open or there is a missing a table attributes block."
+link: https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/
+scope: raw
+script: |
+  text := import("text")
+
+  matches := []
+  tbl_attrs_regex := "\\[(caption|cols|options).*\\]"
+  tbl_delim_regex := "\\|={3,}"
+  table_blocks := 0
+
+  for line in text.split(scope, "\n") {
+    if text.re_match(tbl_delim_regex, line){
+      start := text.index(scope, line)
+      matches = append(matches, {begin: start, end: start + len(line)})  
+    } else if text.re_match(tbl_attrs_regex, line){
+      table_blocks ++
+    }
+  }
+
+  if len(matches) / 2 == table_blocks {
+    matches = []
+  }
