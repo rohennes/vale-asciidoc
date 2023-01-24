@@ -1,10 +1,10 @@
-# Vale ruleset for Asciidoc
+# Vale ruleset for AsciiDoc
 
-This repo contains Vale rules for checking Asciidoc markup. These syntax rules were derived from Red Hat's [Modular Docs Guidelines](https://redhat-documentation.github.io/modular-docs/) and [OpenShift Docs Guidelines](https://github.com/openshift/openshift-docs/blob/main/contributing_to_docs/doc_guidelines.adoc).
+This repo contains Vale rules to check for correct AsciiDoc syntax in AsciiDoc module files. These syntax rules are derived from Red Hat's [Modular Docs Guidelines](https://redhat-documentation.github.io/modular-docs/) and [OpenShift Docs Guidelines](https://github.com/openshift/openshift-docs/blob/main/contributing_to_docs/doc_guidelines.adoc).
 
 For Vale installation steps, see here: https://vale.sh/docs/vale-cli/installation/
 
-**_NOTE:_** If you need Vale rules to lint AsciiDoc content, not AsciiDoc syntax, see the vale-at-red-hat project: https://github.com/redhat-documentation/vale-at-red-hat/
+**_NOTE:_** If you need Vale rules to lint grammar and accepted Red Hat terminology in AsciiDoc, see [Vale at Red Hat](https://github.com/redhat-documentation/vale-at-red-hat/). 
 
 ## Testing the `AsciiDoc` rule set
 To test the `AsciiDoc` rule set, add a `.vale.ini` configuration file in your modules directory. 
