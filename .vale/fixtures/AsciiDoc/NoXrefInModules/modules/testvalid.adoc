@@ -1,2 +1,9 @@
+:_content-type: ASSEMBLY
+[id="REPLACE_ME_WITH_ID"]
+= REPLACE_ME_WITH_TITLE
+:context: REPLACE_ME_WITH_CONTEXT
+
+toc::[]
+
 //vale-fixture
 xref:../rosa_getting_started/rosa-getting-started.adoc#rosa-getting-started[Getting started with {product-title}]

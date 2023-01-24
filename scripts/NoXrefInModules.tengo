@@ -1,0 +1,28 @@
+/*
+    Tengo Language
+    $ tengo NoXrefInModules.tengo <asciidoc_file_to_validate>
+*/
+
+fmt := import("fmt")
+os := import("os")
+text := import("text")
+
+input := os.args()
+scope := os.read_file(input[2])
+
+matches := []
+xref_regex := "xref:(.*)(\\.adoc)#(.*)"
+content_type_regex := "^:_content-type:\\s(CONCEPT|PROCEDURE|REFERENCE)"
+module := false
+
+//if the file has a module content-type, flag the xref error
+for line in text.split(scope, "\n") {
+  if text.re_match(content_type_regex, line) {
+    module = true
+} else if text.re_match(xref_regex, line) && module == true {
+    start := text.index(scope, line)
+    matches = append(matches, {begin: start, end: start + len(line)})
+  }
+}
+
+fmt.println(matches)
