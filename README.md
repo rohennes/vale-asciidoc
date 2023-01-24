@@ -4,7 +4,7 @@ This repo contains Vale rules to check for correct Asciidoc syntax. These syntax
 
 For Vale installation steps, see here: https://vale.sh/docs/vale-cli/installation/
 
-**_NOTE:_** If you need Vale rules to lint grammar and accepted Red Hat terminology in AsciiDoc, see the vale-at-red-hat project: https://github.com/redhat-documentation/vale-at-red-hat/
+**_NOTE:_** If you need Vale rules to lint grammar and accepted Red Hat terminology in AsciiDoc, see the [Vale at Red Hat project](https://github.com/redhat-documentation/vale-at-red-hat/). 
 
 ## Testing the `AsciiDoc` rule set
 To test the `AsciiDoc` rule set, add a `.vale.ini` configuration file in your modules directory. 
