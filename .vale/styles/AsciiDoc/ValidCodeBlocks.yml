@@ -1,0 +1,27 @@
+---
+extends: script
+ignorecase: true
+level: error
+message: "One or more AsciiDoc code blocks is open or there is a missing source attributes block."
+link: https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/
+scope: raw
+script: |
+  text := import("text")
+
+  matches := []
+  codeblock_delim_regex := "-{4,}"
+  source_block_regex := "\\[(source|subs|options|role).*\\]"
+  sources_blocks := 0
+
+  for line in text.split(scope, "\n") {
+    if text.re_match(codeblock_delim_regex, line){
+      start := text.index(scope, line)
+      matches = append(matches, {begin: start, end: start + len(line)})  
+    } else if text.re_match(source_block_regex, line){
+      sources_blocks ++
+    }
+  }
+
+  if len(matches) / 2 == sources_blocks {
+    matches = []
+  }
