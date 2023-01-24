@@ -1,6 +1,6 @@
 # Vale ruleset for AsciiDoc
 
-This repo contains Vale rules to check for correct AsciiDoc syntax. These syntax rules were derived from Red Hat's [Modular Docs Guidelines](https://redhat-documentation.github.io/modular-docs/) and [OpenShift Docs Guidelines](https://github.com/openshift/openshift-docs/blob/main/contributing_to_docs/doc_guidelines.adoc).
+This repo contains Vale rules to check for correct AsciiDoc syntax in AsciiDoc module files. These syntax rules were derived from Red Hat's [Modular Docs Guidelines](https://redhat-documentation.github.io/modular-docs/) and [OpenShift Docs Guidelines](https://github.com/openshift/openshift-docs/blob/main/contributing_to_docs/doc_guidelines.adoc).
 
 For Vale installation steps, see here: https://vale.sh/docs/vale-cli/installation/
 
