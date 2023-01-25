@@ -9,8 +9,8 @@ script: |
   text := import("text")
 
   matches := []
-  tbl_attrs_regex := "\\[(caption|cols|options).*\\]"
-  tbl_delim_regex := "\\|={3,}"
+  tbl_attrs_regex := "^\\[(caption|cols|options).*\\]"
+  tbl_delim_regex := "^\\|={3,}"
   table_blocks := 0
 
   for line in text.split(scope, "\n") {
