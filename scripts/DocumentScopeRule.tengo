@@ -1,0 +1,27 @@
+/*
+    Tengo Language
+    $ tengo DocumentScopeRule.tengo <asciidoc_file_to_validate>
+*/
+
+fmt := import("fmt")
+os := import("os")
+input := os.args()
+scope := os.read_file(input[2])
+
+text := import("text")
+lines := []
+line_num := 0
+xref_regex := "xref:(.*)(\\.adoc)#(.*)"
+
+//create a one-indexed array called lines with entries for each line in the scope
+for line in text.split(scope, "\n") {
+    line_num ++
+    lines = append(lines, {"line": line_num, "text": line})
+}
+
+for item in lines {
+  if text.re_match(xref_regex, item.text) {
+    //this is the line number with the match
+    fmt.println(item.line)
+  }
+}
