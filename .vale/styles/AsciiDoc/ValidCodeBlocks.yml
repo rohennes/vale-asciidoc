@@ -2,35 +2,23 @@
 extends: script
 ignorecase: true
 level: error
-message: "One or more AsciiDoc code blocks is open or there is a missing source attributes block."
+message: "Unterminated AsciiDoc listing block found in file."
 link: https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/
 scope: raw
 script: |
   text := import("text")
 
   matches := []
-  lines := []
   codeblock_delim_regex := "^-{4,}"
-  source_block_regex := "^\\[.*\\]"
-  line_num := 0
   count := 0
 
-  //create a one-indexed array called lines with entries for each line in the scope
   for line in text.split(scope, "\n") {
-    line_num ++
-    lines = append(lines, {"line": line_num, "text": line})
-  }
-
-  for line in text.split(scope, "\n") {
-    count ++
-    //check for codeblock delim and sourceblock immediately preceding it
     if text.re_match(codeblock_delim_regex, line) {
-      if text.re_match(source_block_regex, lines[count-2].text) {
-        start := text.index(scope, line)
-        matches = append(matches, {begin: start, end: start + len(line)})
-      } else if len(matches) > 0 {
-        //remove the most recently added match
-        matches = matches[:len(matches)-1]
-      }
+      count += 1
+      start := text.index(scope, line)
+      matches = append(matches, {begin: start, end: start + len(line)}) 
+    } else if count > 1 {
+      count = 0 // code block is closed, reset the count
+      matches = []
     }
   }
