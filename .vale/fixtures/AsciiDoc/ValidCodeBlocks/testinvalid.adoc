@@ -1,6 +1,19 @@
 //vale-fixture
 Here is a code block:
 
+.REPLACE_WITH_TABLE_TITLE
+[cols=2*, width="40%", options="header"]
+|====
+|Firefox
+|Web Browser
+
+|Ruby
+|Programming Language
+
+|TorqueBox
+|Application Server
+
+
 [source,terminal]
 ----
 $ pwd
@@ -11,7 +24,6 @@ Here is a another code block:
 [source,terminal]
 ----
 $ pwd
-----
 
 Here is a code block:
 
@@ -19,8 +31,8 @@ Here is a code block:
 ----
 ---
 apiVersion: 4.11
-
 Some text.
+----
 
 Here is a code block:
 

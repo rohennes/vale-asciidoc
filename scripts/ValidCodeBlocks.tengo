@@ -1,6 +1,6 @@
 /*
-    Tengo Language
-    $ tengo ValidCodeBlocks.tengo <asciidoc_file_to_validate>
+Tengo Language
+$ tengo ValidCodeBlocks.tengo <asciidoc_file_to_validate>
 */
 
 fmt := import("fmt")
@@ -11,21 +11,30 @@ input := os.args()
 scope := os.read_file(input[2])
 
 matches := []
+lines := []
 codeblock_delim_regex := "^-{4,}"
-source_block_regex := "^\\[(source|subs|role).*\\]"
-sources_blocks := 0
+source_block_regex := "^\\[.*\\]"
+line_num := 0
+count := 0
 
+//create a one-indexed array called lines with entries for each line in the scope
 for line in text.split(scope, "\n") {
-  if text.re_match(codeblock_delim_regex, line){
-    start := text.index(scope, line)
-    matches = append(matches, {begin: start, end: start + len(line)})  
-  } else if text.re_match(source_block_regex, line){
-    sources_blocks ++
-  }
+  line_num ++
+  lines = append(lines, {"line": line_num, "text": line})
 }
 
-if len(matches) / 2 == sources_blocks {
-  matches = []
+for line in text.split(scope, "\n") {
+  count ++
+  //check for codeblock delim and sourceblock immediately preceding it
+  if text.re_match(codeblock_delim_regex, line) {
+    if text.re_match(source_block_regex, lines[count-2].text) {
+      start := text.index(scope, line)
+      matches = append(matches, {begin: start, end: start + len(line)})
+    } else if len(matches) > 0 {
+      //remove the most recently added match
+      matches = matches[:len(matches)-1]
+    }
+  }
 }
 
 fmt.println(matches)
