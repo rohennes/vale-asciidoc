@@ -12,8 +12,8 @@ input := os.args()
 scope := os.read_file(input[2])
 matches := []
 
-if_regex := "(ifdef::.+\\[\\]|ifndef::.+\\[\\]|ifeval::.*)"
-endif_regex := "endif::.*"
+if_regex := "^(ifdef::.+\\[\\]|ifndef::.+\\[\\]|ifeval::.*)"
+endif_regex := "^endif::.*"
 
 for line in text.split(scope, "\n") {
   if text.re_match(if_regex, line) {
