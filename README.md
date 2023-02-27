@@ -14,13 +14,12 @@ To test the `AsciiDoc` rule set, add a `.vale.ini` configuration file in your mo
   ```
   StylesPath = ../.vale/styles
 
-  MinAlertLevel = suggestion
+MinAlertLevel = suggestion
 
-  Packages = RedHat, \
-  https://github.com/rohennes/vale-asciidoc/releases/latest/download/AsciiDoc.zip
+Packages = https://github.com/rohennes/vale-asciidoc/releases/download/AsciiDoc/AsciiDoc.zip
 
-  [[!.]*.adoc]
-  BasedOnStyles = RedHat, AsciiDoc
+[[!.]*.adoc]
+BasedOnStyles = RedHat, AsciiDoc
   ```
 
   **Note:** This is a separate `vale.ini` file that is designed for modules only - not assemblies.  If you are using this with `openshift-docs` or any other repo, don't overwrite existing `vale.ini` files.
