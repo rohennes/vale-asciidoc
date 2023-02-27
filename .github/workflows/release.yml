@@ -22,16 +22,9 @@ jobs:
       - name: Create AsciiDoc ruleset release
         run: |
           cd .vale/styles
-          echo AsciiDoc_v$GITHUB_RUN_NUMBER > version.txt
+          echo $GITHUB_RUN_NUMBER > version.txt
           zip -r AsciiDoc.zip AsciiDoc
-          gh release create AsciiDoc 'AsciiDoc.zip'
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Create OpenShiftAsciiDoc ruleset release
-        run: |
-          cd .vale/styles
-          echo OpenShiftAsciiDoc_v$GITHUB_RUN_NUMBER > version.txt
           zip -r OpenShiftAsciiDoc.zip OpenShiftAsciiDoc
-          gh release create OpenShiftAsciiDoc 'OpenShiftAsciiDoc.zip'
+          gh release create v$GITHUB_RUN_NUMBER 'AsciiDoc.zip' 'OpenShiftAsciiDoc.zip'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
