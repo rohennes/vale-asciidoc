@@ -9,7 +9,6 @@
 Some text.
 |===
 
-//vale-fixture
 .Table two
 [options="header"]
 |====
@@ -20,7 +19,6 @@ This content goes on and on.
 
 Some text.
 
-//vale-fixture
 .Table three
 [options="header"]
 |====
@@ -30,7 +28,6 @@ Some text.
 
 Some text.
 
-//vale-fixture
 .Table four
 [options="header"]
 |====

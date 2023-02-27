@@ -19,12 +19,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-
-      - name: Create release
+      - name: Create AsciiDoc ruleset release
         run: |
-          cd .vale/styles
+          cd .vale/styles/AsciiDoc
           echo $GITHUB_RUN_NUMBER > version.txt
           zip -r AsciiDoc.zip AsciiDoc
           gh release create v$GITHUB_RUN_NUMBER 'AsciiDoc.zip'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Create OpenShiftAsciiDoc ruleset release
+        run: |
+          cd .vale/styles/OpenShiftAsciiDoc
+          echo $GITHUB_RUN_NUMBER > version.txt
+          zip -r OpenShiftAsciiDoc.zip OpenShiftAsciiDoc
+          gh release create v$GITHUB_RUN_NUMBER 'OpenShiftAsciiDoc.zip'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
