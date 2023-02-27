@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@master
       - name: Create AsciiDoc ruleset release
         run: |
-          cd .vale/styles/AsciiDoc
+          cd .vale/styles
           echo $GITHUB_RUN_NUMBER > version.txt
           zip -r AsciiDoc.zip AsciiDoc
           gh release create v$GITHUB_RUN_NUMBER 'AsciiDoc.zip'
@@ -29,7 +29,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Create OpenShiftAsciiDoc ruleset release
         run: |
-          cd .vale/styles/OpenShiftAsciiDoc
+          cd .vale/styles
           echo $GITHUB_RUN_NUMBER > version.txt
           zip -r OpenShiftAsciiDoc.zip OpenShiftAsciiDoc
           gh release create v$GITHUB_RUN_NUMBER 'OpenShiftAsciiDoc.zip'
