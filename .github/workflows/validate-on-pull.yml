@@ -1,0 +1,19 @@
+---
+name: Verify Vale test fixtures
+on:
+  - pull_request
+jobs:
+  validate-rules:
+    name: Validate rules
+    runs-on: ubuntu-latest
+    #antora-for-modular-docs:main includes vale
+    container: quay.io/antoraformodulardocs/antora-for-modular-docs:main
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0 # enable git diff and building many branches
+      - name: Validate Vale rules
+        id: validate-rules
+        run: scripts/validate-vale-rules.sh
