@@ -6,4 +6,4 @@ level: error
 link: https://github.com/openshift/openshift-docs/blob/main/contributing_to_docs/doc_guidelines.adoc#links-hyperlinks-and-cross-references
 message: "You can only nest snippets or Git Hub raw user content in modules."
 raw:
-  - 'include::(?!snippets|https:\/\/raw\.githubusercontent\.com).*(\[.*\])?'
+  - 'include::(?!snippets).*\/*.*\.(adoc|asciidoc)\[.*\]'
