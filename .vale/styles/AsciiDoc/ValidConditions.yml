@@ -2,7 +2,7 @@
 extends: script
 ignorecase: true
 level: error
-message: "AsciiDoc file contains unbalanced if statements."
+message: "File contains unbalanced if statements."
 link: https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/
 scope: raw
 script: |
