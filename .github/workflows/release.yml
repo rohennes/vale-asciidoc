@@ -23,8 +23,8 @@ jobs:
         run: |
           cd .vale/styles
           echo $GITHUB_RUN_NUMBER > version.txt
-          zip -r AsciiDoc.zip AsciiDoc
-          zip -r OpenShiftAsciiDoc.zip OpenShiftAsciiDoc
+          zip -r AsciiDoc.zip AsciiDoc/*
+          zip -r OpenShiftAsciiDoc.zip OpenShiftAsciiDoc/*
           gh release create v$GITHUB_RUN_NUMBER 'AsciiDoc.zip' 'OpenShiftAsciiDoc.zip'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
