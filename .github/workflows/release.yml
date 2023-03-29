@@ -25,6 +25,7 @@ jobs:
           echo $GITHUB_RUN_NUMBER > version.txt
           zip -r AsciiDoc.zip AsciiDoc
           zip -r OpenShiftAsciiDoc.zip OpenShiftAsciiDoc
-          gh release create v$GITHUB_RUN_NUMBER 'AsciiDoc.zip' 'OpenShiftAsciiDoc.zip'
+          gh release create AsciiDoc_v$GITHUB_RUN_NUMBER 'AsciiDoc.zip' 
+          gh release create OpenShiftAsciiDoc_v$GITHUB_RUN_NUMBER 'OpenShiftAsciiDoc.zip'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
