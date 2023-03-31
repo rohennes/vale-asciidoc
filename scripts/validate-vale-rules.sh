@@ -13,11 +13,11 @@ set -e
 
 Rule() {
     DIR=".vale/fixtures/$RULE"
-    echo $DIR
+    echo "$DIR"
     VALIDALERTSCOUNT="$(vale --config="$DIR/.vale.ini" --no-exit --output=line "$DIR/testvalid.adoc" | wc -l)"
     INVALIDALERTSCOUNT="$(vale --config="$DIR/.vale.ini" --no-exit --output=line "$DIR/testinvalid.adoc" | wc -l)"
     INVALIDLINES="$(grep -c "//vale-fixture" "$DIR/testinvalid.adoc" || true)"
-    INVALIDGAP=$(($INVALIDLINES - $INVALIDALERTSCOUNT))
+    INVALIDGAP=$((INVALIDLINES - INVALIDALERTSCOUNT))
     if [ "$VALIDALERTSCOUNT" -gt 0 ]
     then
         echo "$VALIDALERTSCOUNT ERROR(s) in $DIR/testvalid.adoc for .vale/styles/$RULE.yml"
