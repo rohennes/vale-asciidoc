@@ -11,7 +11,7 @@ input := os.args()
 scope := os.read_file(input[2])
 
 matches := []
-codeblock_delim_regex := "^-{4,}"
+codeblock_delim_regex := "^-{4,}$"
 source_block_regex := "^\\[(source|subs|role).*\\]"
 sources_blocks := 0
 

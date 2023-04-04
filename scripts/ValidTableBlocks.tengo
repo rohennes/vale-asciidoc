@@ -11,7 +11,7 @@ input := os.args()
 scope := os.read_file(input[2])
 
 matches := []
-tbl_delim_regex := "^\\|={3,}"
+tbl_delim_regex := "^\\|={3,}$"
 count := 0
 
 for line in text.split(scope, "\n") {
