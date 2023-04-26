@@ -1,6 +1,5 @@
 ---
 extends: script
-ignorecase: true
 level: error
 message: "File contains unbalanced if statements."
 link: https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/

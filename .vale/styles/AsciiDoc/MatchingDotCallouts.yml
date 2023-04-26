@@ -1,6 +1,5 @@
 ---
 extends: script
-ignorecase: true
 message: "Corresponding callout not found."
 level: error
 link: https://docs.asciidoctor.org/asciidoc/latest/verbatim/callouts/
