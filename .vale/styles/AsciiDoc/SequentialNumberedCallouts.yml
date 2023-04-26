@@ -1,6 +1,5 @@
 ---
 extends: script
-ignorecase: true
 message: "Numbered callout does not follow sequentially."
 level: error
 link: https://docs.asciidoctor.org/asciidoc/latest/verbatim/callouts/

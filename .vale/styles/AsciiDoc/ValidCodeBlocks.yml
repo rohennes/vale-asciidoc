@@ -1,6 +1,5 @@
 ---
 extends: script
-ignorecase: true
 level: error
 message: "Unterminated listing block found in file."
 link: https://docs.asciidoctor.org/asciidoc/latest/verbatim/listing-blocks/
