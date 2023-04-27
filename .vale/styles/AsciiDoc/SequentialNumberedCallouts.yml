@@ -9,11 +9,11 @@ script: |
   matches := []
 
   prev_num := 0
-  numbered_callout_regex := "<(\\d+)>"
-  listingblock_delim_regex := "^-{4,}$"
+  numbered_callout_regex := ".*<(\\d+)>"
+  listingblock_delim_regex := "^-{3,}$"
 
   for line in text.split(scope, "\n") {
-    //reset count if we hit a listing block delimiter 
+    //reset count if we hit a listing block delimiter
     if text.re_match(listingblock_delim_regex, line) {
       prev_num = 0
     }
@@ -30,7 +30,7 @@ script: |
         //start counting
         if num != prev_num+1 {
           start := text.index(scope, line)
-          matches = append(matches, {begin: start, end: start + len(line)}) 
+          matches = append(matches, {begin: start, end: start + len(line)})
         }
         prev_num = num
       }
