@@ -9,23 +9,29 @@ text := import("text")
 
 input := os.args()
 scope := os.read_file(input[2])
-
 matches := []
-codeblock_delim_regex := "^-{4,}$"
-source_block_regex := "^\\[(source|subs|role).*\\]"
-sources_blocks := 0
+
+//trim extra whitespace
+scope = text.trim_space(scope)
+//add a newline, it might be missing
+scope += "\n"
+
+listingblock_delim_regex := "^-{4,}$"
+count := 0
 
 for line in text.split(scope, "\n") {
-  if text.re_match(codeblock_delim_regex, line){
+  if text.re_match(listingblock_delim_regex, line) {
+    count += 1
     start := text.index(scope, line)
-    matches = append(matches, {begin: start, end: start + len(line)})  
-  } else if text.re_match(source_block_regex, line){
-    sources_blocks ++
+    matches = append(matches, {begin: start, end: start + len(line)})
+  } else if count > 1 {
+    count = 0 // listing block is closed, reset the count
+    matches = []
   }
 }
 
-if len(matches) / 2 == sources_blocks {
-  matches = []
+if len(matches) == 0 {
+  fmt.println("Valid codeblocks")
+} else {
+  fmt.println(matches) 
 }
-
-fmt.println(matches)

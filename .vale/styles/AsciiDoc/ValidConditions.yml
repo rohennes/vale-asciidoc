@@ -6,8 +6,12 @@ link: https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/
 scope: raw
 script: |
   text := import("text")
-
   matches := []
+
+  //trim extra whitespace
+  scope = text.trim_space(scope)
+  //add a newline, it might be missing
+  scope += "\n"
 
   if_regex := "^(ifdef::.+\\[\\]|ifndef::.+\\[\\]|ifeval::.*)"
   endif_regex := "^endif::.*"

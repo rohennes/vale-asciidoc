@@ -8,6 +8,11 @@ script: |
   text := import("text")
   matches := []
 
+  //trim extra whitespace
+  scope = text.trim_space(scope)
+  //add a newline, it might be missing
+  scope += "\n"
+
   prev_num := 0
   numbered_callout_regex := ".*<(\\d+)>"
   listingblock_delim_regex := "^-{4,}$"

@@ -35,5 +35,3 @@ Here is a final code block:
 ----
 $ pwd
 ----
-
-Some text.
