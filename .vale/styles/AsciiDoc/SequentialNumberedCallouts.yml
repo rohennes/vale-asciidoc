@@ -28,7 +28,7 @@ script: |
         //cast string > int
         num := text.atoi(trimmed)
         //start counting
-        if num != prev_num+1 {
+        if num != prev_num && num != prev_num+1 {
           start := text.index(scope, line)
           matches = append(matches, {begin: start, end: start + len(line)})
         }
