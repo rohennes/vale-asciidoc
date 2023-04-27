@@ -10,3 +10,16 @@ end
 <1> Library import
 <2> URL mapping
 <3> Response block
+
+//vale-fixture
+[source,ruby]
+----
+require 'sinatra' <1>
+
+get '/hi' do <1>
+  "Hello World!"
+end
+key: value <2>
+----
+<1> Library import
+<2> URL mapping
