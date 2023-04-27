@@ -6,7 +6,7 @@ link: https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/
 scope: raw
 script: |
   text := import("text")
-  
+
   matches := []
 
   if_regex := "^(ifdef::.+\\[\\]|ifndef::.+\\[\\]|ifeval::.*)"

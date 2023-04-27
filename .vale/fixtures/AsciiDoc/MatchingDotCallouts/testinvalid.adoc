@@ -3,7 +3,7 @@
 ----
 get '/hi' do <.>
 get '/hi' do <.>
-get '/hi' do <.> <.> <.>
+get '/hi' do<.> <.> <.>
 ----
 <.> first callout
 <.> second callout
