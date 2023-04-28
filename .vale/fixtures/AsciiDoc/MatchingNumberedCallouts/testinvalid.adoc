@@ -2,7 +2,7 @@
 [source,ruby]
 ----
 require 'frank' <1>
-get '/hihi' <2> <3>
+get '/hihi'<2><3>
 ----
 <1> text
 <2> More text
