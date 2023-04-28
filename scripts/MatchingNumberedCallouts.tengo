@@ -19,13 +19,14 @@ scope += "\n"
 
 num_codeblock_callouts := 0
 num_callouts := 0
-codeblock_callout_regex := ".*( <\\d+>)+"
+codeblock_callout_regex := ".(<\\d+>)+"
 callout_regex := "^<(\\d+)>"
 
 for line in text.split(scope, "\n") {
   if text.re_match(codeblock_callout_regex, line) {
     //restart for new listingblock
     num_callouts = 0
+    fmt.println(line)
     //account for lines with multiple callouts
     for i := 1; i < len(line); i++ {
       //text.count must be str, not regex
