@@ -3,7 +3,7 @@
 require 'sinatra' <1>
 get '/hi' do <2>
 require 'sinatra' <3>
-get '/hi' do <4>
+get '/hi' do <12>
 hi there <5>
 goop <6>
 require 'sinatra'
