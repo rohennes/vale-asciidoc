@@ -3,8 +3,19 @@
 [id="rosa-getting-started_{context}"]
 = Comprehensive guide to getting started with {product-title}
 
+//vale-fixture
 .Example output
 [source,terminal]
 ----
 {"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","endpoint":"web","instance":"10.129.0.46:8080","job":"prometheus-example-app","namespace":"ns1","pod":"prometheus-example-app-68d47c4fb6-jztp2","service":"prometheus-example-app"},"value":[1591881154.748,"1"]}]}}
+----
+
+//vale-fixture
+[source,terminal]
+----
+$ oc adm must-gather
+[must-gather      ] OUT Using must-gather plugin-in image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:125f183d13601537ff15b3239df95d47f0a604da2847b561151fedd699f5e3a5
+[must-gather      ] OUT namespace/openshift-must-gather-xm4wq created
+[must-gather      ] OUT clusterrolebinding.rbac.authorization.k8s.io/must-gather-2bd8x created
+[must-gather      ] OUT pod for plug-in image quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:125f183d13601537ff15b3239df95d47f0a604da2847b561151fedd699f5e3a5 created
 ----
