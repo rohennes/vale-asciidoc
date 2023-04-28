@@ -6,8 +6,13 @@ link: https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/
 scope: raw
 script: |
   text := import("text")
-
   matches := []
+
+  //trim extra whitespace
+  scope = text.trim_space(scope)
+  //add a newline, it might be missing
+  scope += "\n"
+
   admon_delim_regex := "^={4,}$"
   count := 0
 

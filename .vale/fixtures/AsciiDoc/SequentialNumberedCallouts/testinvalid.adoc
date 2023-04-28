@@ -5,7 +5,7 @@ get '/hi' do <2>
 require 'sinatra' <3>
 get '/hi' do <4>
 hi there <5>
-poop <6>
+goop <6>
 require 'sinatra'
 
 get '/hi' do <7> <8>
