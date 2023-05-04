@@ -19,13 +19,3 @@ get '/hi' do <7> <8>
 <6> Again, some text
 <7> Moar text
 <8> Again, some more text
-
-//vale-fixture
-[source,ruby]
-----
-require 'sinatra' <1>
-get '/hi' do <3>
-get '/hi' do <4>
-----
-<1> Test
-<2> Test
