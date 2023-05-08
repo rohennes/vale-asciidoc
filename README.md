@@ -1,4 +1,4 @@
-# This repo is deprecated. For latest rules AsciiDoc and OpenShiftAsciiDoc rules see here: https://github.com/redhat-documentation/vale-at-red-hat/
+# This repo is deprecated. For latest updates for AsciiDoc and OpenShiftAsciiDoc rule sets see here: https://github.com/redhat-documentation/vale-at-red-hat/
 
 ## Vale ruleset for AsciiDoc
 
